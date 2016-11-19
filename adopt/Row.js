@@ -4,22 +4,30 @@ import {
   Text,
   View,
   ListView,
-  TouchableHighlight
+  Image,
+  TouchableOpacity
 } from 'react-native';
 
 export default class Feed extends Component {
   render(){
     return (
-      <TouchableHighlight style={{height:80}}>
+      <TouchableOpacity style={{height:80}}
+      onPress={() => {
+        this.props.navigator.push({
+          mark: 1,
+          idCachorro: this.props.data.id
+        })
+      }}>
         <View style={styles.box}>
-            <View style={{width: 100, height: 100, backgroundColor: '#e4f4ef'}}>
-
-            </View>
+            <Image 
+            style={{width: 50, height: 50}}
+            source={{uri: this.props.data.url}}
+         />
             <View><Text>{this.props.data.raca}</Text></View>
             <View><Text>{this.props.data.especie}</Text></View>
 
         </View>
-      </TouchableHighlight>
+      </TouchableOpacity>
     );
 
   }
@@ -33,6 +41,6 @@ const styles = StyleSheet.create({
     marginBottom: 5,
     marginLeft: 10,
     marginRight:10,
-    marginTop:5},
+    marginTop: 20},
 }
 );

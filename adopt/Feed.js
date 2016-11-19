@@ -2,23 +2,29 @@ import React, {Component} from 'react';
 import {StyleSheet, Text, View, ListView, TouchableHighlight, Navigator} from 'react-native';
 
 import Row from './Row';
+import DogDetail from './DogDetail';
+
 var animais = [
   {
     "raca": "Doberman",
+    "id": "1",
     "especie": " Cachorro",
     "endereco": "Avenida Fraga maia",
     "nascimento": "30/05/1996",
     "sexo": "Femea",
     "fotos": "",
-    "decricao": "Victor"
+    "decricao": "Victor",
+    "url": "http://fotos.sofotos.org/filhotes-de-cachorros/filhotes-de-cachorro-fofo.jpg"
   }, {
     "raca": "Doberman",
+    "id": "2",
     "especie": " Cachorro",
     "endereco": "Avenida Fraga maia",
     "nascimento": "30/05/1996",
     "sexo": "Femea",
     "fotos": "",
-    "decricao": "Victor"
+    "decricao": "Victor",
+    "url": "http://fotos.sofotos.org/filhotes-de-cachorros/filhotes-de-cachorro-fofo.jpg"
   }
 ]
 export default class Feed extends Component {
@@ -46,8 +52,17 @@ export default class Feed extends Component {
                 renderRow={(dataSource) => <Row data={dataSource} navigator={navigator} />}></ListView>
             );
           case 1:
+          let data = [];
+          for(let i = 0 ; i < animais.length ; i++){
+            console.log(animais[i].id, " = animal id");
+            console.log(route.idCachorro, " = id cachorro");
+            if(animais[i].id == route.idCachorro){
+              data = animais[i];
+            }
+          }
+          console.log("data equals to ", data);
             return (
-              <View><Text>Cool</Text></View>
+              <DogDetail data={data} />
             )
         }
       }}></Navigator>
