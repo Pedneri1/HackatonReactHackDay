@@ -3,6 +3,7 @@ import {
     StyleSheet,
     Text,
     View,
+    Image,
     Navigator,
     Button,
     TextInput
@@ -30,11 +31,13 @@ export default class Login extends Component {
                     case 0:
                         return (
                             <View style={styles.container}>
+                                  <Image
+                                  style={styles.logo}
+
+                                      source={{uri: "http://www.expertoanimal.com/es/images/3/6/1/img_socializar_a_un_cachorro_correctamente_20163_600.jpg"}}
+                                    />
                                 <Text style={styles.welcome}>
                                     Bem vindo ao Adopt.me
-                                </Text>
-                                <Text>
-                                    Faça login
                                 </Text>
                                 <TextInput
                                     style={{height: 40}}
@@ -48,16 +51,16 @@ export default class Login extends Component {
                                     onChangeText={(senha) => {
                                         this.setState({senha});
                                     }}
-                                    />                                    
+                                    />
                                 <Button
-                                    title="Feed"
+                                    title="Entrar"
                                     onPress={() => {
                                         let login = this.state.login;
                                         let senha = this.state.senha;
                                         console.log("login = ", login, " senha = ", senha);
                                         if(login == 'Pedro@pedro.com' || login == 'Joao@joao.com.br'){
                                             if(senha == '1234'){
-                                                navigator.push({mark: 1});       
+                                                navigator.push({mark: 1});
                                             } else {
                                                 alert("Login ou senha incorretos");
                                             }
@@ -79,8 +82,14 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         justifyContent: 'center',
-        alignItems: 'center',
+        alignItems: 'stretch',
+        marginLeft: 20,
+        marginRight: 20,
         backgroundColor: '#F5FCFF'
+    },
+    logo: {
+      height: 300,
+      width: 300
     },
     welcome: {
         fontSize: 20,
