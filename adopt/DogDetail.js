@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import {StyleSheet, Text, View, ListView, TouchableHighlight, Navigator, Image} from 'react-native';
 
 import Row from './Row';
+import NavigationBar from 'react-native-navbar';
 
 export default class DogDetail extends Component {
 
@@ -12,8 +13,23 @@ export default class DogDetail extends Component {
 
   render() {
     console.log(this.props.data);
+    var rightButtonConfig = {
+    title: 'Voltar',
+    handler: function onNext() {
+      this.props.navigator.pop();
+    }
+    };
+
+    var titleConfig = {
+        title: this.props.data.raca,
+    };
     return (
-        <View style={styles.container} >
+        <View>
+            <NavigationBar
+            title={titleConfig}
+            leftButton={rightButtonConfig} />
+
+            <View style={styles.container}>
             <View style={{alignItems: 'center'}}><View style={{width: 350, height: 350, backgroundColor:'#000'}}>
             </View></View>
             
@@ -24,6 +40,7 @@ export default class DogDetail extends Component {
                 <Text>Sexo: {this.props.data.sexo}</Text>
                 <Text>Descricao: {this.props.data.descricao}</Text>
                 <Text>Endereco: {this.props.data.endereco}</Text>
+            </View>
             </View>
         </View>
     );

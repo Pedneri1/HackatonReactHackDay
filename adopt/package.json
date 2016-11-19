@@ -10,6 +10,7 @@
     "react": "15.3.2",
     "react-native": "0.37.0",
     "react-native-card-view": "0.0.3",
+    "react-native-navbar": "^1.5.4",
     "react-native-side-menu": "^0.20.1"
   },
   "jest": {
