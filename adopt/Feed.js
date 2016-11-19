@@ -2,6 +2,9 @@ import React, {Component} from 'react';
 import {StyleSheet, Text, View, ListView, TouchableHighlight, Navigator} from 'react-native';
 
 import Row from './Row';
+
+const SideMenu = require('react-native-side-menu');
+
 var animais = [
   {
     "raca": "Doberman",
@@ -32,8 +35,9 @@ export default class Feed extends Component {
     }
   }
 
-  render() {
-    return (
+
+ render() {
+    return (<SideMenu>
       <Navigator
         initialRoute={{ mark: 0 }}
         renderScene={(route, navigator) => {
@@ -50,9 +54,9 @@ export default class Feed extends Component {
               <View><Text>Cool</Text></View>
             )
         }
-      }}></Navigator>
+      }}></Navigator></SideMenu>
     );
 
-  }
+}
 
 }
