@@ -3,25 +3,46 @@ import {
   StyleSheet,
   Text,
   View,
-  ListView
+  ListView,
+  TouchableHighlight
 } from 'react-native';
 
-
+import Row from './Row';
+var animais = [
+    { "raca": "Doberman",
+      "especie":" Cachorro",
+      "endereco": "Avenida Fraga maia",
+      "nascimento": "30/05/1996",
+      "sexo": "Femea",
+      "fotos": "",
+      "decricao": "Victor"},
+      { "raca": "Doberman",
+        "especie":" Cachorro",
+        "endereco": "Avenida Fraga maia",
+        "nascimento": "30/05/1996",
+        "sexo": "Femea",
+        "fotos": "",
+        "decricao": "Victor"}
+  ]
 export default class Feed extends Component {
   constructor() {
     super();
-    const ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2});
+    var dataSource = new ListView.DataSource({rowHasChanged:(r1,r2) => r1.guid != r2.guid});
     this.state = {
-      dataSource: ds.cloneWithRows(['row 1', 'row 2']),
-    };
+      dataSource: dataSource.cloneWithRows(animais)
+    }
   }
 
-  render() {
+  render(){
     return (
-      <ListView
-        dataSource={this.state.dataSource}
-        renderRow={(rowData) => <Text>{rowData}</Text>}
-      />
+      <ListView dataSource={this.state.dataSource}
+            renderRow={(dataSource)=> <Row
+                data = {dataSource}
+                />
+            }>
+      </ListView>
     );
+
   }
+
 }
