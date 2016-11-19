@@ -11,7 +11,7 @@ export default class Feed extends Component {
   render(){
     return (
       <TouchableHighlight style={{height:80}}>
-        <View style={{flex: 1, flexDirection:'row'}}>
+        <View style={styles.box}>
             <View style={{width: 100, height: 100, backgroundColor: '#e4f4ef'}}>
 
             </View>
@@ -23,5 +23,16 @@ export default class Feed extends Component {
     );
 
   }
-
 }
+
+const styles = StyleSheet.create({
+  box: {
+    flex: 1,
+    flexDirection:'row',
+    elevation: 5,
+    marginBottom: 5,
+    marginLeft: 10,
+    marginRight:10,
+    marginTop:5},
+}
+);
