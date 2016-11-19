@@ -22,11 +22,12 @@ export default class Feed extends Component {
         })
       }}>
         <View style={styles.box}>
-            <View style={{height: 70, width: 70,backgroundColor:"#eee"}}></View>
+            <Image style={{height: 70, width: 70, marginRight: 10}} source={{uri: this.props.data.url}}/>
             <View style={{flex:1, flexDirection:'column'}}>
               <View><Text style={{fontWeight: 'bold'}}>{this.props.data.especie}</Text></View>
               <View><Text >{this.props.data.raca}</Text></View>
               <View><Text>{this.props.data.descricao}</Text></View>
+              <View><Text>{this.props.data.nascimento}</Text></View>
             </View>
           </View>
       </TouchableOpacity>
