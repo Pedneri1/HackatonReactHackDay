@@ -10,7 +10,7 @@ var animais = [
   {
     "raca": "Doberman",
     "id": "1",
-    "especie": " Cachorro",
+    "especie": "Cachorro",
     "endereco": "Avenida Fraga maia",
     "nascimento": "30/05/1996",
     "sexo": "Femea",
@@ -20,7 +20,7 @@ var animais = [
   }, {
     "raca": "Doberman",
     "id": "2",
-    "especie": " Cachorro",
+    "especie": "Cachorro",
     "endereco": "Avenida Fraga maia",
     "nascimento": "30/05/1996",
     "sexo": "Femea",
