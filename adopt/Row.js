@@ -9,7 +9,9 @@ import {
 } from 'react-native';
 
 export default class Feed extends Component {
+  
   render(){
+    let urlImagem = './img/'+this.props.data.url;
     return (
       <TouchableOpacity style={{height:80}}
       onPress={() => {
@@ -20,9 +22,8 @@ export default class Feed extends Component {
       }}>
         <View style={styles.box}>
             <Image 
-            style={{width: 50, height: 50}}
-            source={{uri: this.props.data.url}}
-         />
+            source={{uri: "http://fotos.sofotos.org/filhotes-de-cachorros/filhotes-de-cachorro-fofo.jpg"}}/>
+            
             <View><Text>{this.props.data.raca}</Text></View>
             <View><Text>{this.props.data.especie}</Text></View>
 
