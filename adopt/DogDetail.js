@@ -6,7 +6,7 @@ import NavigationBar from 'react-native-navbar';
 
 export default class DogDetail extends Component {
 
-// <Image 
+// <Image
 //             style={{width: 350, height: 350, marginRight: 10}}
 //             source={{uri: this.props.data.url}} />
 
@@ -16,6 +16,7 @@ export default class DogDetail extends Component {
     var rightButtonConfig = {
     title: 'Voltar',
     handler: function onNext() {
+      alert("OK");
       this.props.navigator.pop();
     }
     };
@@ -27,13 +28,21 @@ export default class DogDetail extends Component {
         <View>
             <NavigationBar
             title={titleConfig}
-            leftButton={rightButtonConfig} />
+            />
 
-            <View style={styles.container}>
-            <View style={{alignItems: 'center'}}><View style={{width: 350, height: 350, backgroundColor:'#000'}}>
-            </View></View>
-            
-            <View style={styles.descriptions}>
+            <View>
+            <Image
+                        style={{width: 340, height: 340, marginRight: 10, marginLeft: 10, borderRadius: 10}}
+                        source={{uri: this.props.data.url}} />
+
+            </View>
+
+            <View style={{
+                flexDirection: 'column',
+                alignItems: 'flex-start',
+                justifyContent: 'flex-start',
+                margin: 10}
+            }>
                 <Text>Raça: {this.props.data.raca}</Text>
                 <Text>Especie: {this.props.data.especie}</Text>
                 <Text>Nascimento: {this.props.data.nascimento}</Text>
@@ -42,7 +51,6 @@ export default class DogDetail extends Component {
                 <Text>Endereco: {this.props.data.endereco}</Text>
             </View>
             </View>
-        </View>
     );
   }
 
@@ -65,9 +73,9 @@ const styles = StyleSheet.create({
     marginBottom: 5,
   },
   descriptions: {
-      flex: 1, 
-      flexDirection: 'column', 
-      alignItems: 'flex-start', 
+      flex: 1,
+      flexDirection: 'column',
+      alignItems: 'flex-start',
       justifyContent: 'flex-start',
       margin: 10
   }

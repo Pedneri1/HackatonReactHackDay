@@ -62,12 +62,12 @@ export default class Login extends Component {
                                             if(senha == '1234'){
                                                 navigator.push({mark: 1});
                                             } else {
-                                                //alert("Login ou senha incorretos");
-                                                navigator.push({mark: 1});
+                                                alert("Login ou senha incorretos");
+                                                //navigator.push({mark: 1});
                                             }
                                         } else {
-                                            //alert("Login ou senha incorretos");
-                                            navigator.push({mark: 1});
+                                            alert("Login ou senha incorretos");
+                                            //navigator.push({mark: 1});
                                         }
                                 }}/>
                             </View>
@@ -91,7 +91,8 @@ const styles = StyleSheet.create({
     },
     logo: {
       height: 300,
-      width: 300
+      width: 300,
+      borderRadius: 150
     },
     welcome: {
         fontSize: 20,
