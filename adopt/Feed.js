@@ -2,11 +2,12 @@ import React, { Component } from 'react';
 import {
   StyleSheet,
   Text,
-  View
+  View,
+  ListView
 } from 'react-native';
 
 
-class Feed extends Component {
+export default class Feed extends Component {
   constructor() {
     super();
     const ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2});
