@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {StyleSheet, Text, View, ListView, TouchableHighlight} from 'react-native';
+import {StyleSheet, Text, View, ListView, TouchableHighlight, Navigator} from 'react-native';
 
 import Row from './Row';
 var animais = [
