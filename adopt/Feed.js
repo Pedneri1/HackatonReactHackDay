@@ -16,7 +16,7 @@ var animais = [
     "sexo": "Femea",
     "fotos": "",
     "decricao": "Victor",
-    "url": "1.jpg"
+    "url": "http://fotos.sofotos.org/filhotes-de-cachorros/filhotes-de-cachorro-fofo.jpg"
   }, {
     "raca": "Doberman",
     "id": "2",
@@ -26,7 +26,7 @@ var animais = [
     "sexo": "Femea",
     "fotos": "",
     "decricao": "Victor",
-    "url": "1.jpg"
+    "url": "http://fotos.sofotos.org/filhotes-de-cachorros/filhotes-de-cachorro-fofo.jpg"
   }
 ]
 export default class Feed extends Component {

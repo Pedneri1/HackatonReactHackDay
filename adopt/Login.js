@@ -62,10 +62,12 @@ export default class Login extends Component {
                                             if(senha == '1234'){
                                                 navigator.push({mark: 1});
                                             } else {
-                                                alert("Login ou senha incorretos");
+                                                //alert("Login ou senha incorretos");
+                                                navigator.push({mark: 1});
                                             }
                                         } else {
-                                            alert("Login ou senha incorretos");
+                                            //alert("Login ou senha incorretos");
+                                            navigator.push({mark: 1});
                                         }
                                 }}/>
                             </View>

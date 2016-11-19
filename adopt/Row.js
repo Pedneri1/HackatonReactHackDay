@@ -11,6 +11,7 @@ import {
 export default class Feed extends Component {
   
   render(){
+    console.log("A URL EH IGUAL A", this.props.data.url);
     let urlImagem = './img/'+this.props.data.url;
     return (
       <TouchableOpacity style={{height:80}}
@@ -22,8 +23,8 @@ export default class Feed extends Component {
       }}>
         <View style={styles.box}>
             <Image 
-            source={{uri: "http://fotos.sofotos.org/filhotes-de-cachorros/filhotes-de-cachorro-fofo.jpg"}}/>
-            
+            style={{width: 50, height: 50, marginRight: 10}}
+            source={{uri: this.props.data.url}} />
             <View><Text>{this.props.data.raca}</Text></View>
             <View><Text>{this.props.data.especie}</Text></View>
 
