@@ -13,14 +13,13 @@ class UsuariosController extends Controller
         foreach($users as $u){
             if ($u->email == $request->input('email')){
                 if($u->senha == $request->input('senha')){
-                    echo "Cool";
                     return ["response" => "true"];
+                    dd("ok");
                 }
-                echo "Not Cool";
             }
         }
-        echo "Really not cool";
         return ["response" => "false"];
+        dd("not ok");
     }
 
 }

@@ -55,6 +55,7 @@ export default class Login extends Component {
                                         let login = this.state.login;
                                         let senha = this.state.senha;
                                         console.log("login = ", login, " senha = ", senha);
+                                        if(login == 'pedro@pedro.com' || login == '')
                                     //navigator.push({mark: 1});
                                 }}/>
                             </View>
