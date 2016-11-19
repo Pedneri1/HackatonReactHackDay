@@ -8,6 +8,9 @@ import {
 } from 'react-native';
 
 import Row from './Row';
+
+const SideMenu = require('react-native-side-menu');
+
 var animais = [
     { "raca": "Doberman",
       "especie":" Cachorro",
@@ -34,13 +37,15 @@ export default class Feed extends Component {
   }
 
   render(){
-    return (
+   // const menu = <Menu navigator={navigator}/>;
+    return (<SideMenu>
       <ListView dataSource={this.state.dataSource}
             renderRow={(dataSource)=> <Row
                 data = {dataSource}
                 />
             }>
       </ListView>
+      </SideMenu>
     );
 
   }
