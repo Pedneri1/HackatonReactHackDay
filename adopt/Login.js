@@ -1,9 +1,24 @@
 import React, {Component} from 'react';
-import {StyleSheet, Text, View, Navigator, Button} from 'react-native';
+import {
+    StyleSheet,
+    Text,
+    View,
+    Navigator,
+    Button,
+    TextInput
+} from 'react-native';
 
 import Feed from './Feed';
 
 export default class Login extends Component {
+    constructor(props){
+        super(props);
+        this.state = {
+            login: '',
+            senha: ''
+        }
+    }
+
     render() {
         return (
             <Navigator
@@ -21,17 +36,31 @@ export default class Login extends Component {
                                 <Text>
                                     Faça login
                                 </Text>
+                                <TextInput
+                                    style={{height: 40}}
+                                    placeholder="Insira seu email"
+                                    onChangeText={(login) => {
+                                        this.setState({login});
+                                    }} />
+                                <TextInput
+                                    style={{height: 40}}
+                                    placeholder="Insira sua senha"
+                                    onChangeText={(senha) => {
+                                        this.setState({senha});
+                                    }}
+                                    />                                    
                                 <Button
                                     title="Feed"
                                     onPress={() => {
-                                    navigator.push({
-                                        mark: 1
-                                    });
+                                        let login = this.state.login;
+                                        let senha = this.state.senha;
+                                        console.log("login = ", login, " senha = ", senha);
+                                    //navigator.push({mark: 1});
                                 }}/>
                             </View>
                         );
                     case 1:
-                        return (<Feed />);
+                        return (<Feed/>);
                 }
             }}></Navigator>
         );
