@@ -19,16 +19,12 @@ export default class Login extends Component {
             senha: ''
         }
     }
+    //To stop to return scene when we touch in the left and pull to right.
+    //it's necessary to pass the prop configureScene={} in the navigator tag.
+
 
     render() {
-        return (
-            <Navigator
-                initialRoute={{
-                mark: 0
-            }}
-                renderScene={(route, navigator) => {
-                switch (route.mark) {
-                    case 0:
+        
                         return (
                             <View style={styles.container}>
                                   <Image
@@ -58,9 +54,9 @@ export default class Login extends Component {
                                         let login = this.state.login;
                                         let senha = this.state.senha;
                                         console.log("login = ", login, " senha = ", senha);
-                                        if(login == 'Pedro@pedro.com' || login == 'Joao@joao.com.br'){
-                                            if(senha == '1234'){
-                                                navigator.push({mark: 1});
+                                        if(login == '' || login == ''){
+                                            if(senha == ''){
+                                                this.props.navigator.push({index: 1});
                                             } else {
                                                 alert("Login ou senha incorretos");
                                                 //navigator.push({mark: 1});
@@ -72,13 +68,9 @@ export default class Login extends Component {
                                 }}/>
                             </View>
                         );
-                    case 1:
-                        return (<Feed/>);
                 }
-            }}></Navigator>
-        );
     }
-}
+
 
 const styles = StyleSheet.create({
     container: {

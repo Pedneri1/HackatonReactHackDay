@@ -117,6 +117,8 @@ onBackWard(){
 
 }
 
+
+
  render() {
    var titleConfig = {
        title: "Animais proximos"
@@ -132,6 +134,7 @@ onBackWard(){
     return (
       <Navigator
         initialRoute={{ mark: 0 }}
+        configureScene={this.configureScene}
         renderScene={(route, navigator) => {
         switch (route.mark) {
           case 0:

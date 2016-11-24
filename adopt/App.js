@@ -2,15 +2,35 @@ import React, { Component } from 'react';
 import {
   StyleSheet,
   Text,
-  View
+  View,
+  Navigator
 } from 'react-native';
 
 import Login from './Login';
+import Feed from './Feed';
 
 export default class App extends Component {
+
+      configureScene(route, routeStack) {
+        return Navigator.SceneConfigs.FadeAndroid;
+    }
+
   render(){
-    return(
-      <Login />
+    return(<Navigator
+    initialRoute={{
+      title: 'Adopt.me',
+      index: 0
+    }}
+    configureScene={this.configureScene}
+    renderScene={(route, navigator)=>{
+      switch(route.index)
+      {
+        case 0:
+          return <Login  navigator={navigator}/>
+        case 1:
+        return <Feed />
+      }
+    }}></Navigator>
     );
   }
 }
