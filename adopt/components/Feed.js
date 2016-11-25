@@ -19,7 +19,7 @@ var animais = [
     "nascimento": "30/05/1996",
     "sexo": "Femea",
     "fotos": "",
-    "decricao": "Victor",
+    "descricao": "Victor",
     "url": "http://www.canlilaralemi.net/wp-content/uploads/2012/07/Doberman12.jpg"
   }, {
     "raca": "Doberman",
@@ -29,7 +29,7 @@ var animais = [
     "nascimento": "30/05/1996",
     "sexo": "Femea",
     "fotos": "",
-    "decricao": "Victor",
+    "descricao": "Victor",
     "url": "http://fotos.sofotos.org/filhotes-de-cachorros/filhotes-de-cachorro-fofo.jpg"
   }, {
     "raca": "Poodle",
@@ -39,7 +39,7 @@ var animais = [
     "nascimento": "25/09/1992",
     "sexo": "Femea",
     "fotos": "",
-    "decricao": "Cachorro quer novo dono",
+    "descricao": "Cachorro quer novo dono",
     "url": "http://image.cachorrogato.com.br/thumb/315/245/1/imagens/racas/imagem201.jpg"
   }, {
     "raca": "Siames",
@@ -49,7 +49,7 @@ var animais = [
     "nascimento": "22/01/2016",
     "sexo": "Femea",
     "fotos": "",
-    "decricao": "Filhotes de siameses",
+    "descricao": "Filhotes de siameses",
     "url": "http://i1.r7.com/data/files/2C95/948E/3A11/7C96/013A/1DB7/1717/3F90/gato.jpg"
   }, {
     "raca": "Sem raca",
@@ -59,7 +59,7 @@ var animais = [
     "nascimento": "20/02/2016",
     "sexo": "Macho",
     "fotos": "",
-    "decricao": "Filhotes abandonados",
+    "descricao": "Filhotes abandonados",
     "url": "http://www.anda.jor.br/wp-content/uploads/2010/12/gato1.jpg"
   }, {
     "raca": "Persa",
@@ -69,7 +69,7 @@ var animais = [
     "nascimento": "20/08/2016",
     "sexo": "Macho",
     "fotos": "",
-    "decricao": "Filhotes lindos de gatos",
+    "descricao": "Filhotes lindos de gatos",
     "url": "https://www.estimacao.com.br/wp-content/uploads/2011/10/filhotes-de-persa.jpg"
   }, {
     "raca": "Pastor Alemao",
@@ -79,7 +79,7 @@ var animais = [
     "nascimento": "20/08/2010",
     "sexo": "Macho",
     "fotos": "",
-    "decricao": "Antigo cao policial precisa de abrigo",
+    "descricao": "Antigo cao policial precisa de abrigo",
     "url": "http://www.adestracaodecaes.com.br/wp-content/uploads/2015/06/d8ce76ca37b80c6865cb8c582e65b104.jpg"
   },
   {
@@ -90,7 +90,7 @@ var animais = [
     "nascimento": "23/09/2014",
     "sexo": "Macho",
     "fotos": "",
-    "decricao": "Doacao de aves",
+    "descricao": "Doacao de aves",
     "url": "https://pbs.twimg.com/profile_images/792187005128024064/zpQio6uN.jpg"
   }, {
     "raca": "",
@@ -101,8 +101,8 @@ var animais = [
     "sexo": "Macho",
     "fotos": "",
     "url": "https://pbs.twimg.com/profile_images/685458109893087232/t1n6lBqK_400x400.jpg",
-    "decricao": "Lindo filhotinho de Chimpanze"
-    
+    "descricao": "Lindo filhotinho de Chimpanze"
+
   }
 ]
 export default class Feed extends Component {
@@ -148,8 +148,8 @@ onBackWard(){
               </ListView>
             </View>
             );
-         
-        
+
+
 
 }
 
