@@ -17,8 +17,8 @@ export default class Feed extends Component {
       <TouchableOpacity style={{height:80}}
       onPress={() => {
         this.props.navigator.push({
-          mark: 1,
-          idCachorro: this.props.data.id
+          index: 2,
+          data: this.props.data
         })
       }}>
         <View style={styles.box}>

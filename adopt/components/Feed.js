@@ -10,8 +10,8 @@ import NavigationBar from 'react-native-navbar';
 
 var animais = [
   {
-    "raca": "Doberman",
     "id": "1",
+    "raca": "Doberman",
     "especie": "Cachorro",
     "endereco": "Avenida Fraga maia",
     "nascimento": "30/05/1996",
@@ -98,8 +98,9 @@ var animais = [
     "nascimento": "16/04/2015",
     "sexo": "Macho",
     "fotos": "",
-    "decricao": "Lindo filhotinho de Chimpanze",
-    "url": "https://pbs.twimg.com/profile_images/685458109893087232/t1n6lBqK_400x400.jpg"
+    "url": "https://pbs.twimg.com/profile_images/685458109893087232/t1n6lBqK_400x400.jpg",
+    "decricao": "Lindo filhotinho de Chimpanze"
+    
   }
 ]
 export default class Feed extends Component {
@@ -131,40 +132,22 @@ onBackWard(){
    }
    };
 
-    return (
-      <Navigator
-        initialRoute={{ mark: 0 }}
-        configureScene={this.configureScene}
-        renderScene={(route, navigator) => {
-        switch (route.mark) {
-          case 0:
             return (
               <View>
               <NavigationBar
-              title={titleConfig}
-              rightButton={rightButtonConfig}/>
+                title={titleConfig}
+                rightButton={rightButtonConfig}
+              />
               <ListView
                 dataSource={this.state.dataSource}
-                navigator={navigator}
-                renderRow={(dataSource) => <Row data={dataSource} navigator={navigator} />}></ListView>
+                navigator={this.props.navigator}
+                renderRow={(dataSource) => <Row data={dataSource} navigator={this.props.navigator} />}
+              >
+              </ListView>
             </View>
             );
-          case 1:
-          let data = [];
-          for(let i = 0 ; i < animais.length ; i++){
-            console.log(animais[i].id, " = animal id");
-            console.log(route.idCachorro, " = id cachorro");
-            if(animais[i].id == route.idCachorro){
-              data = animais[i];
-            }
-          }
-          console.log("data equals to ", data);
-            return (
-              <DogDetail navigator={navigator} data={data} />
-            )
-        }
-      }}></Navigator>
-    );
+         
+        
 
 }
 

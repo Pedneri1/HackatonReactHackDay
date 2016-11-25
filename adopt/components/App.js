@@ -8,6 +8,7 @@ import {
 
 import Login from './Login';
 import Feed from './Feed';
+import DogDetail from './DogDetail';
 
 export default class App extends Component {
 
@@ -28,7 +29,9 @@ export default class App extends Component {
         case 0:
           return <Login  navigator={navigator}/>
         case 1:
-        return <Feed />
+          return <Feed navigator = {navigator}/>
+        case 2:
+          return <DogDetail navigator = {navigator} data={route.data}/>
       }
     }}></Navigator>
     );
