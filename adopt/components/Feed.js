@@ -7,6 +7,8 @@ import DogDetail from './DogDetail';
 
 import NavigationBar from 'react-native-navbar';
 
+//To the side bar
+const SideMenu = require('react-native-side-menu');
 
 var animais = [
   {
@@ -133,7 +135,7 @@ onBackWard(){
    };
 
             return (
-              <View>
+              <View backgroundColor='#e9eaee'>
               <NavigationBar
                 title={titleConfig}
                 rightButton={rightButtonConfig}

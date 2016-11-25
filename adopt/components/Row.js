@@ -14,14 +14,15 @@ export default class Feed extends Component {
     console.log("A URL EH IGUAL A", this.props.data.url);
     let urlImagem = './img/'+this.props.data.url;
     return (
-      <TouchableOpacity style={{height:80}}
+      <View style={styles.box}>
+      <TouchableOpacity 
       onPress={() => {
         this.props.navigator.push({
           index: 2,
           data: this.props.data
         })
       }}>
-        <View style={styles.box}>
+        <View style={styles.inside} backgroundColor='#ffffff'>
             <Image style={{height: 70, width: 70, marginRight: 10, borderRadius: 10}} source={{uri: this.props.data.url}}/>
             <View style={{flex:2, flexDirection:'column' }}>
               <View><Text style={{fontWeight: 'bold'}}>{this.props.data.especie}</Text></View>
@@ -32,7 +33,7 @@ export default class Feed extends Component {
               </View>
             </View>
           </View>
-      </TouchableOpacity>
+     </TouchableOpacity></View>
     );
 
   }
@@ -40,13 +41,21 @@ export default class Feed extends Component {
 
 const styles = StyleSheet.create({
   box: {
-    height: 70,
+    height: 320,
     flex: 1,
     flexDirection:'row',
     elevation: 5,
     marginBottom: 5,
-    marginLeft: 10,
+    marginLeft: 15,
     marginRight:10,
-    marginTop: 20},
+    marginTop: 10,
+    borderRadius: 10},
+  inside:{
+   
+    flex: 3,
+
+    
+  }
+    
 }
 );
